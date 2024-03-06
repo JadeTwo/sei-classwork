@@ -1,16 +1,85 @@
+body > p {
+    color: orange;
+}
+
+body > p {
+    color: purple;
+}
+
+section p {
+    background-color: aquamarine;
+}
+
+section > div {
+    color: blueviolet;
+}
+
+h2 + p {
+    color: red;
+}
+
+/* h2 ~ p {
+    background-color: blue;
+} */
+
 body {
     background-color: darkslategrey;
     color: black;
     font-size: 1.1em;
 }
+
+/* .header {
+    color: orange;
+}
+
+#header {
+    color: blue;
+} */
+
+/* body h1 {
+    color: teal;
+}
+
 h1 {
     color: coral;
+} */
+
+/* p:first-child {
+    color: #a0a5d4;
+} */
+
+h1:hover {
+    background-color: aqua;
 }
+
 #intro {
     font-size: 1.3em;
 }
+
 .colorful {
     color: orange;
 }
 
 section { border: 5px solid black; padding: 10px; background-color:#dbfffe; }
+
+li:first-child {
+    color: red;
+}
+
+li:nth-child(2) {
+    color: blue;
+}
+
+li:last-child {
+    color: green;
+}
+
+p::before {
+    content: 'before';
+    color: green;
+}
+
+p::after {
+    content: 'after';
+    color: red;
+}
