@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Creating a Navigation Bar</title>
+      <link rel="stylesheet" href="../styles/nav.css">
+   </head>
+   <body>
+    <ul>
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#resources">Resources</a></li>
+        <li style="float:right"><a href="#login">
+           <img src="https://as2.ftcdn.net/v2/jpg/02/76/68/21/1000_F_276682118_1oO9nlBhn2tjVxODmkH3SGQp0AbA2Wft.jpg" alt="Login Icon" class="login-user"/>Log In
+        </a></li>
+     </ul>    
+<br><br>
+     
+     <form action="#">
+        <label for="userName">User Name
+          <input type="text" name="userName" id="userName" required />
+        </label>
+     
+     <br>
+        <label for="password">Password
+          <input type="password" name="password" id="password" />
+        </label>
+     </form>
+
+     
+
+<br><br>
+     <fieldset>
+        <legend>Checkboxes</legend>
+        <label for="checkbox">Checkbox1
+           <input type="checkbox" name="checkbox" id="checkbox" />
+        </label>
+        <label for="checkbox2">Checkbox2
+           <input type="checkbox" name="checkbox2" id="checkbox2" />
+        </label>
+        <label for="checkbox3">Checkbox3
+           <input type="checkbox" name="checkbox3" id="checkbox3" />
+        </label>
+     </fieldset>
+
+     <br><br>
+
+     <fieldset>
+        <legend>Radio Buttons</legend>
+        <label>Radio1
+           <input type="radio" name="radio" id="radio1" />
+        </label><br>
+        <label>Radio2
+           <input type="radio" name="radio" id="radio2" />
+        </label><br>
+        <label>Radio3
+           <input type="radio" name="radio" id="radio3" />
+        </label>
+     </fieldset>
+
+     <br><br>
+
+     <form action="#">
+        <label>Choose a car:</label>
+        <select name="cars">
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="fiat">Fiat</option>
+          <option value="audi" selected>Audi</option>
+        </select>
+      
+        <input type="submit">
+      </form>
+      
+
+   </body>
+</html>
