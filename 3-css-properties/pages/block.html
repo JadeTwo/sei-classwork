@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Block Example</title>
+
+    <style>
+        /*
+        Emmet shortcut mt margin top
+        Emmet shortcut bgc background color
+        Emmet shortcut w width
+        Emmet shortcut h height
+        Emmet shortcut d:b display  block:
+        Emmet shortcut bd border shorthand:
+
+        Class selector = .block
+        Type selector =     div, span
+        Selector list =     .block, block div
+        Descendant combinator = .block div
+    */
+
+        .block, .block div {
+            /*Toggle between block and inline-block to see the difference .*/
+            display: block;
+        }
+
+        .block {
+            margin-top: 10px;
+            background-color: white;
+            width: 210px;
+            height: 205px;
+            border: 3px dashed red;
+        }
+
+        /****** Child divs ******/
+        .block div {
+            /******     Comment out  width for block example   ******/
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000;
+            background-color: lightgreen;
+
+        }
+
+        span {
+            background-color: aqua;
+            /*Comment out display to see span in it's default inline value  .*/
+            /*display: block;*/
+        }
+    </style>
+</head>
+<body>
+
+
+<h2>Block</h2>
+<p>Block does not allow other boxes to sit right next to them, and it will use the whole space available
+    horizontally.</p>
+<div class="block">
+    <div>Inner Div 1</div>
+    <div>Inner Div 2</div>
+</div>
+
+
+<p> If the box with this display property does not fit in the space available,
+    <span>it will try to fit some of its content</span>, and whatever does not fit goes to a new line. To do this,
+    shrink your browser and see it break, and then toggle between block and inline-block to see the difference.</p>
+
+</body>
+</html>
+block.html
+Displaying block.html.
