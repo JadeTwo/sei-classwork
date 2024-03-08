@@ -1,6 +1,12 @@
 .container {  
     display: flex;
-    justify-content: space-evenly;
+    /* flex-direction: row; */
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    height: 100vh;
+    flex-wrap: wrap-reverse;
+    align-content: space-around;
  }
 
  .boxes {
@@ -14,8 +20,12 @@
  #box1 { 
     background-color: green; 
     /* margin-right: auto; */
+    /* flex-grow: 2; */
 }
- #box2 { background-color: yellow; }
+ #box2 { 
+   background-color: yellow; 
+   /* flex-grow: 1 */
+}
  #box3 { background-color: pink; }
  #box4 { background-color: blue; }
  #box5 { background-color: red; }
