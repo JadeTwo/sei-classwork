@@ -6,24 +6,96 @@
     <title>Document</title>
    <style>
 
-    #box1 {
+    div {
         height: 100px;
         width: 100px;
         border: 1px solid black;
+    }
+
+    #box1 {
         background-color: greenyellow;
-        transition-property: background-color;
+        transition-property: background-color, color;
         transition-duration: 500ms;
+        /* shorthand version */
+        /* transition: background-color 500ms, color 500ms; */
     }
 
     #box1:hover {
         background-color: lightcyan;
+        color: white;
+    }
+
+    #box2 {
+        background-color: yellow;
+        transition-property: font-size;
+        transition-duration: 1s;
+    }
+
+    #box2:hover {
+        font-size: 50pt;
+    }
+
+    #box3 {
+        background-color: rgb(237, 111, 178);
+        transition: width 1s, height 1s;
+    }
+
+    #box3:hover {
+        width: 200px;
+        height: 200px;
+    }
+
+    #box4 {
+        background-color: blue;
+        transition-property: transform;
+        transition-duration: 1s;
+    }
+
+    #box4:hover {
+        transform: translateX(100px);
+    }
+
+    #box5 {
+        background-color: orange;
+        /* transition-property: transform;
+        transition-duration: 3s;
+        transition-timing-function: ease-out;
+        transition-delay: 1s; */
+        /* transition: transform 3s ease-out 1s, background-color 1s; */
+    }
+
+    span {
+        transition: transform 1s;
+        border: 1px solid black;
+    }
+
+    span:hover {
+        color: red;
+        transform: rotate(360deg);
+    }
+
+    #box5:hover {
+        transform: rotate(360deg);
+        background-color: red;
     }
 
    </style>
 </head>
 <body>
     <div id="box1">
-        Test
+        Hello
+    </div>
+    <div id="box2">
+        World!
+    </div>
+    <div id="box3">
+        Box!
+    </div>
+    <div id="box4">
+        Move me!
+    </div>
+    <div id="box5">
+        <span>Rotate me!</span>
     </div>
 </body>
 </html>
