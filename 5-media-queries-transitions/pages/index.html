@@ -64,16 +64,14 @@
         /* transition: transform 3s ease-out 1s, background-color 1s; */
     }
 
-    span {
+    p {
         transition-property: transform;
         transition-duration: 1s;
         border: 1px solid black;
     }
 
-    span:hover {
-        color: red;
+    div:hover > p {
         transform: rotate(360deg);
-        transform-origin: 0 0;
     }
 
     #box5:hover {
@@ -97,7 +95,7 @@
         Move me!
     </div>
     <div id="box5">
-        <span>Rotate me!</span>
+        <p>Rotate me!</p>
     </div>
 </body>
 </html>
