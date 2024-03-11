@@ -65,13 +65,15 @@
     }
 
     span {
-        transition: transform 1s;
+        transition-property: transform;
+        transition-duration: 1s;
         border: 1px solid black;
     }
 
     span:hover {
         color: red;
         transform: rotate(360deg);
+        transform-origin: 0 0;
     }
 
     #box5:hover {
