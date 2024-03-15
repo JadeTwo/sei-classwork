@@ -131,6 +131,7 @@ let fruit = "Orange";
 console.log(fruit[0]); // p
 console.log("Orange"[0]); // p
 
+// indexes are zero-based
 fruit[0] = "A";
 
 console.log(fruit);
