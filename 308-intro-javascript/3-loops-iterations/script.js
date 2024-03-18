@@ -176,11 +176,50 @@ while (change > 0) {
     quarters++;
 }
 
-console.log('quarters: ', quarters);
-console.log('dollars: ', quarters / 4)
-console.log('change: ', change)
+// console.log('quarters: ', quarters);
+// console.log('dollars: ', quarters / 4)
+// console.log('change: ', change)
 
 // console.log(change, quarters / 4);
 
 
 
+// Write a while loop for the given output:
+//  10, 30, 50, 70, 90
+//  20, 40, 60, 80, 100
+
+// - This could be acheived a few ways, be creative.
+
+// Write a while loop that prints all numbers from 500 - 800 
+// only if they are divisible by 4.
+
+// Nested Loops
+
+// for (let i = 0; i < 5; i++) {
+//     console.log('outer: ', i);
+//     for (let j = 0; j < 5; j++) {
+//         console.log('inner: ', j)
+//     }
+// }
+
+// Prime Number (a number only divisible by itself and 1)
+// ex: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29
+
+for (let i = 2; i < 30; i++) {
+
+    let isPrime = true;
+    
+    for (let j = 2; j < i; j++) {
+        
+        if (i % j === 0) {
+            // not prime
+            isPrime = false;
+            break; 
+        }
+    }
+
+    if (isPrime) {
+        console.log(i, ' is prime')
+    }
+
+}
