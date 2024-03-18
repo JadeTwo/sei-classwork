@@ -205,21 +205,65 @@ while (change > 0) {
 // Prime Number (a number only divisible by itself and 1)
 // ex: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29
 
-for (let i = 2; i < 30; i++) {
+outer: for (let i = 2; i < 30; i++) {
 
-    let isPrime = true;
+    // let isPrime = true;
     
     for (let j = 2; j < i; j++) {
         
         if (i % j === 0) {
             // not prime
-            isPrime = false;
-            break; 
+            // isPrime = false;
+            continue outer;
         }
     }
 
-    if (isPrime) {
+    // if (isPrime) {
         console.log(i, ' is prime')
-    }
-
+    // }
 }
+
+
+// do...while loop
+
+// let x = 10;
+
+// do {
+// 	x--;
+// 	console.log(x);
+// } while (x > 50);
+
+// 
+
+let x = 1;
+let y = 1;
+
+myLoop: while (true) {
+	console.log(`Outer loop ${x}.`);
+	x++;
+
+	while (true) {
+		console.log(`Inner loop ${y}.`);
+		y++;
+
+		if (x == 5 && y % 5 == 0) {
+			break myLoop;
+		} else if (y % 5 == 0) {
+			continue myLoop;
+		}
+	}
+}
+
+while (true) {
+    // break
+}
+
+// for (let i = 0; i < 5; i++) {
+//     continue;
+//     //
+//     //
+//     //
+// }
+// 
+// 
+// 
