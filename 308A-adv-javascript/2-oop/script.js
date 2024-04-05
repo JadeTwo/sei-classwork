@@ -147,3 +147,33 @@ console.log(cow1.toString());
 
 console.log(cat1.toString());
 
+
+
+// inheritance
+
+class Human extends Animal {
+
+    constructor(name, age, occupation, location) {
+        super(2, 2, false, false) // eyes, legs, isAwake, isMoving
+        this.name = name; 
+        this.age = age; // could be moved the Animal class
+        this.occupation = occupation;
+        this.location = location;
+    }
+
+    introduce() {
+        console.log(`Hello, my name is ${this.name.first} ${this.name.last}, and I'm a ${this.age}-year-old ${this.occupation} from ${this.location.city}, ${this.location.state}!`);
+    }
+}
+
+const person1 = new Human({ first: 'Elyan', last: 'Kemble' }, 32, "Front-End Developer", { city: 'Garland', state: 'Texas', zip: 75040 });
+
+console.log(person1);
+
+person1.introduce();
+
+
+
+
+
+
