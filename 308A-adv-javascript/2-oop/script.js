@@ -112,8 +112,9 @@ class Dog extends Animal {
       super(2, 4, isAwake, isMoving);
       this.hair = hair;
     }
-    speak() {
-      super.speak("Moo.");
+    static speak() {
+        console.log('Moo')
+    //   super.speak("Moo.");
     }
     toString() {
       return super.toString("Cow");
@@ -125,14 +126,16 @@ class Dog extends Animal {
   const cat1 = new Cat("Orange", false, false);
   const cat2 = new Cat("Black and White", false, false);
   const dog1 = new Dog("Gold", true, true);
-  const cow1 = new Cow("Brown", true, false);
+//   const cow1 = new Cow("Brown", true, false);
 
+console.log('cow says: ')
+Cow.speak();
 
 
 
 cat1.speak();
 dog1.speak();
-cow1.speak();
+// cow1.speak();
 
 console.log(cat1);
 
@@ -143,7 +146,7 @@ console.log(cat1);
 
 console.log(cat1.toString());
 console.log(dog1.toString());
-console.log(cow1.toString());
+// console.log(cow1.toString());
 
 console.log(cat1.toString());
 
@@ -175,5 +178,5 @@ person1.introduce();
 
 
 
-
-
+const math = new Math() // no necessary
+math.random() // not an instance method

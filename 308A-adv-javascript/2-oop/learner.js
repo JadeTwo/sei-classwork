@@ -57,13 +57,24 @@ class Learner {
         // turn array of grades into a string and return it
         return this.#grades.join(', ')
     }
+
+    get average() {
+        // copy the array so that we can manipulate it with sort and shift below
+        const arr = [...this.#grades];
+        // sort by lowest to highest and remove the lowest grade (with shift)
+        arr.sort((a, b) => a - b).shift();
+    
+        // use reduce to add up all the grades and reduce them to a single value
+        // divide that by the length to get the average
+        return arr.reduce((a, b) => a + b) / arr.length;
+      }
   }
 
   const learner1 = new Learner('Leeroy', 'Jenkins', 18);
 
   // as long as we have getter methods, we can access private 
   // properties like age and name with dot notation
-  console.log(learner1)
+  console.log(learner1.name, learner1.age)
   
   // can only use assignment operator on a private property
   // if there's setter method for it (the value 20 will be
@@ -76,3 +87,44 @@ class Learner {
   learner1.addGrades(20, 30, 40, 60, 10, 20, 30, 50)
 
   console.log(learner1.grades) // 20, 30, 40
+
+  // access the getter method for average
+ console.log(learner1.average)
+
+
+ class Grades {
+    static getAverage(...grades) {
+      const arr = [];
+  
+      grades = grades.flat();
+      grades.forEach((grade) => {
+        grade = Number(grade);
+  
+        if (grade >= 0 && grade <= 100) {
+          arr.push(grade);
+        }
+      });
+      
+      arr.sort((a, b) => a - b).shift();
+  
+      return arr.reduce((a, b) => a + b) / arr.length;
+    }
+  }
+
+
+console.log(Grades.getAverage(50,10,30,40))
+
+
+
+class Animal {}
+class Cat extends Animal {}
+class Tabby extends Cat {}
+class SpottedTabby extends Tabby {}
+
+const cat1 = new SpottedTabby();
+let object = cat1;
+
+do {
+  object = Object.getPrototypeOf(object);
+  console.log(object);
+} while (object);
