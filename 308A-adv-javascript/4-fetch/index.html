@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <label>
+        Input:
+        <input type="text" id="myInput"  />
+    </label>
+
+
+    <button id="myBtn">Test it Out</button>
+
+    <script>
+        let request;
+
+        document
+            .getElementById("myBtn")
+            .addEventListener("click", testRequest)
+
+        function testRequest() {
+            request = new XMLHttpRequest();
+
+            if (!request) {
+                alert('failed to create an XMLHttpRequest Object')
+            }
+ 
+            request.onreadystatechange = alertResponse
+            request.open("POST", "https://jsonplaceholder.typicode.com/todos");
+
+            request.setRequestHeader(
+                "Content-Type",
+                "application/x-www-form-urlencoded"
+            )
+
+            const value = document.getElementById("myInput").value
+            let encoded = encodeURIComponent(value)
+
+            console.log(encoded);
+
+            request.send(`data=${encoded}`);
+        }
+
+        function alertResponse() {
+            if (request.readyState === XMLHttpRequest.DONE) {
+                console.log(request.status)
+                if (request.status === 200 || request.status === 201) {
+                    
+                    alert(request.responseText)
+
+                    const obj = JSON.parse(request.responseText)
+                    console.log(request.responseText, typeof request.responseText)
+                    console.log(obj, typeof obj)
+
+                    console.log(obj.data, obj.id)
+
+
+                    // const xml = request.responseXML
+                    // const root = xml.querySelector("root")
+
+                    // let data = root.firstChild.data
+
+                    // console.log(root)
+                    // console.log(root.firstChild)
+                    // console.log(data)
+
+                    // alert(data)
+
+                } else {
+                    alert("The request returned a status other than 200 OK: " + request.status)
+                }
+            }
+           
+        }
+
+    </script>
+</body>
+</html>
