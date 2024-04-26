@@ -1,11 +1,13 @@
 import express from 'express'
 import 'dotenv/config'
 
-import gradeRoutes from './routes/grades.mjs'
+import gradeRoutes from './routes/grades.js'
 
 const app = express()
 
 const PORT = process.env.PORT || 5050;
+
+app.use(express.json())
 
 app.use('/grades', gradeRoutes)
 

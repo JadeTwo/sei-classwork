@@ -8,6 +8,7 @@ let conn;
 
 try {
    conn = await client.connect()
+   console.log('Connected to MongoDB')
 } catch(err) {
     console.log(err)
 }
