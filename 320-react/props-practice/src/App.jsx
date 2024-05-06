@@ -6,17 +6,42 @@ import Welcome from './components/Welcome'
 
 import Image from './components/Image'
 
+// how-duh
+const Parent = props => <Child cheese="gouda" />
+
+const Child = props => <GrandChild data={props.cheese} />
+
+const GrandChild = props => <h1>{props.data}</h1>
+
+
+// const Navbar = props => <Image link={props.link} />
+
+// const Image = props => <a href={props.link}></a>
+
+
 function App() {
+
+  
+  // creating the props object first...
+  let reactImageProps = {
+    src: reactLogo,
+    alt: 'React logo',
+    href: 'https://react.dev'
+  }
+
 
   return (
     <>
       <div>
 
+
         <Image src={viteLogo} alt='Vite logo' href='https://vitejs.dev' /> 
-        <Image src={reactLogo} alt='React logo' href='https://react.dev' /> 
+        {/* // spreading the object into key value pairs */}
+        <Image {...reactImageProps} /> 
         
       </div>
       <h1>Vite + React</h1>
+      <Parent />
 
       <Welcome firstName="Bob" lastName="Boberton" style={{ color: 'red' }} />
       <Welcome firstName="George" lastName="Washington" style={{ color: 'blue' }} />
