@@ -18,6 +18,15 @@ const GrandChild = props => <h1>{props.data}</h1>
 
 // const Image = props => <a href={props.link}></a>
 
+const Container = props => {
+  return (
+    <div>
+      <h2>Hello (from container)</h2>
+      {props.children}
+    </div>
+  )
+}
+
 
 function App() {
 
@@ -29,15 +38,34 @@ function App() {
     href: 'https://react.dev'
   }
 
+  let arr = [1,2,3,4,5]
+
+  arr.map(num => num * 2) //  [2,4,6,8,5]
+
+  const dogs = [
+    { name: "Sparky", age: 5 },
+    { name: "Spot", age: 5 },
+    { name: "Ralph", age: 5 },
+    { name: "Fido", age: 5 },
+  ]
+
+  let dogElements = dogs.map((dog, index) => <div key={dog.name}>{dog.name}, {dog.age}</div>) //  [<div>Sparky, 5</div>, <div>Spot, 5</div>, ...]
 
   return (
     <>
       <div>
 
+      {dogElements}
+
+      <Container>
 
         <Image src={viteLogo} alt='Vite logo' href='https://vitejs.dev' /> 
         {/* // spreading the object into key value pairs */}
         <Image {...reactImageProps} /> 
+
+      </Container>
+
+
         
       </div>
       <h1>Vite + React</h1>
