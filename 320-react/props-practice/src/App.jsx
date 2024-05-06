@@ -4,21 +4,22 @@ import './App.css'
 
 import Welcome from './components/Welcome'
 
+import Image from './components/Image'
+
 function App() {
 
   return (
     <>
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+
+        <Image src={viteLogo} alt='Vite logo' href='https://vitejs.dev' /> 
+        <Image src={reactLogo} alt='React logo' href='https://react.dev' /> 
+        
       </div>
       <h1>Vite + React</h1>
 
-      <Welcome name="Bob" />
+      <Welcome firstName="Bob" lastName="Boberton" style={{ color: 'red' }} />
+      <Welcome firstName="George" lastName="Washington" style={{ color: 'blue' }} />
 
       <div className="card">
         <p>

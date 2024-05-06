@@ -1,9 +1,23 @@
 function Welcome(props) {
-    console.log(props.name)
+
+    /*
+
+    props looks like (an object):
+
+    {
+        firstName: ...
+        lastName: ...
+        style: {
+            color: ...
+        }
+    }
+
+    */
+
     return (
-        <>
-            Welcome {props.name}!
-        </>
+        <h1 style={props.style}>
+            Welcome {props.firstName} {props.lastName}!
+        </h1>
     )
 }
 
