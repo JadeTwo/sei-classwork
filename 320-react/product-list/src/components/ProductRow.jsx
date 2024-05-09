@@ -1,6 +1,6 @@
 function ProductRow() {
     return (
-        <></>
+        <tr></tr>
     )
 }
 

@@ -1,12 +1,22 @@
 import ProductCategoryRow from "./ProductCategoryRow"
 import ProductRow from "./ProductRow"
 
-function ProductTable() {
+function ProductTable({ products }) {
+
+    let rows = []
+
     return (
-        <>
-            <ProductCategoryRow />
-            <ProductRow />
-        </>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                {rows}
+            </tbody>
+        </table>
     )
 }
 

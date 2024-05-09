@@ -1,6 +1,6 @@
 function ProductCategoryRow() {
     return (
-        <></>
+        <tr></tr>
     )
 }
 
