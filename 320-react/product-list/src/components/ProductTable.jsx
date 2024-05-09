@@ -1,7 +1,7 @@
 import ProductCategoryRow from "./ProductCategoryRow"
 import ProductRow from "./ProductRow"
 
-function ProductTable({ products }) {
+function ProductTable({ filterText, inStockOnly, products }) {
 
     let rows = []
     let lastCategory = null
