@@ -8,7 +8,10 @@ function ProductTable({ filterText, inStockOnly, products }) {
 
     products.forEach((product) => {
 
-        if (!product.name.includes(filterText)) {
+        let productName = product.name.toLowerCase()
+        let search = filterText.toLowerCase()
+
+        if (!productName.includes(search)) {
             return;
         }
 

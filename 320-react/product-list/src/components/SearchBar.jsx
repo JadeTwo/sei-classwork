@@ -11,7 +11,11 @@ function SearchBar({ filterText, inStockOnly, setFilterText, setInStockOnly }) {
             />
             <label>
                 <p>
-                    <input type="checkbox" checked={inStockOnly} />
+                    <input 
+                        type="checkbox" 
+                        checked={inStockOnly} 
+                        onChange={(e) => setInStockOnly(e.target.checked)}
+                    />
                     Only show products in Stock
                 </p>
             </label>
