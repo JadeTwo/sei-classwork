@@ -6,6 +6,17 @@ import './App.css'
 
 function App() {
 
+  const [person, setPerson] = useState({
+    firstName: "S'Chn T'Gai",
+    lastName: "Spock",
+    email: "spock@ussenterprise.space",
+    address: {
+        city: "USS Enterprise",
+        state: "Where No Man Has Gone Before",
+        zip: "9083147"
+    }
+  });
+
   let [count, setCount] = useState(0) 
 
   let [user, setUser] = useState({
@@ -32,6 +43,16 @@ function App() {
     })
   }
 
+  function changeZip() {
+    setPerson({
+      ...person,
+      address: {
+        ...person.address,
+        zip: '000000'
+      }
+    });
+  }
+
   return (
     <>
      Hello (from React)
@@ -43,6 +64,12 @@ function App() {
 
     <h2>{user.status}</h2>
     <button onClick={changeStatus}>Change Status</button>
+
+     <p>||||||||||||||||||||||||||||||</p>
+
+
+    <h3>{person.address.zip}</h3>
+    <button onClick={changeZip}>Change Zip</button>
 
      <p>||||||||||||||||||||||||||||||</p>
 
