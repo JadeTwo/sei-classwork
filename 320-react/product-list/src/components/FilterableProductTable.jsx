@@ -1,11 +1,11 @@
 import SearchBar from "./SearchBar"
 import ProductTable from "./ProductTable"
 
-function FilterableProductTable() {
+function FilterableProductTable({ products }) {
     return (
         <>
             <SearchBar />
-            <ProductTable />
+            <ProductTable products={products} />
         </>
     )
 }
