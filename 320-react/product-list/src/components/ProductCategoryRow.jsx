@@ -1,6 +1,8 @@
-function ProductCategoryRow() {
+function ProductCategoryRow({ category }) {
     return (
-        <tr>Category</tr>
+        <tr>
+            <th>{category}</th>
+        </tr>
     )
 }
 

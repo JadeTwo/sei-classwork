@@ -9,11 +9,17 @@ function ProductTable({ products }) {
     products.forEach((product) => {
         if (product.category !== lastCategory) {
             rows.push(
-                <ProductCategoryRow /> 
+                <ProductCategoryRow 
+                    key={product.category}
+                    category={product.category}
+                /> 
             )
         }
         rows.push(
-            <ProductRow />
+            <ProductRow 
+                key={product.name}
+                product={product}
+            />
         )
         lastCategory = product.category
     })
