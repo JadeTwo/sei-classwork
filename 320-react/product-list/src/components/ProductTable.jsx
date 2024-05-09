@@ -4,6 +4,19 @@ import ProductRow from "./ProductRow"
 function ProductTable({ products }) {
 
     let rows = []
+    let lastCategory = null
+
+    products.forEach((product) => {
+        if (product.category !== lastCategory) {
+            rows.push(
+                <ProductCategoryRow /> 
+            )
+        }
+        rows.push(
+            <ProductRow />
+        )
+        lastCategory = product.category
+    })
 
     return (
         <table>
