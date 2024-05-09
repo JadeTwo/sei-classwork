@@ -2,13 +2,13 @@ import './App.css'
 
 import FilterableProductTable from './components/FilterableProductTable'
 
-import PRODUCTS from './data'
+import products from './data'
 
 function App() {
 
   return (
     <>
-      <FilterableProductTable products={PRODUCTS} />
+      <FilterableProductTable products={products} />
     </>
   )
 }
