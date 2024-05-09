@@ -12,6 +12,8 @@ function FilterableProductTable({ products }) {
             <SearchBar 
                 filterText={filterText}
                 inStockOnly={inStockOnly}
+                setFilterText={setFilterText}
+                setInStockOnly={setInStockOnly}
             />
             <ProductTable 
                 filterText={filterText}

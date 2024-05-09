@@ -7,6 +7,15 @@ function ProductTable({ filterText, inStockOnly, products }) {
     let lastCategory = null
 
     products.forEach((product) => {
+
+        if (!product.name.includes(filterText)) {
+            return;
+        }
+
+        if (inStockOnly && !product.stocked) {
+            return
+        }
+
         if (product.category !== lastCategory) {
             rows.push(
                 <ProductCategoryRow 
