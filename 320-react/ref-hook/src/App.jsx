@@ -3,6 +3,7 @@ import './App.css'
 
 import Counter from './components/Counter'
 import Stopwatch from './components/StopWatch'
+import CatFriends from './components/CatFriends'
 
 function App() {
   
@@ -16,8 +17,8 @@ function App() {
     <>
       Hello
       
-      
-      <Counter />
+      <CatFriends />
+      {/* <Counter /> */}
       {/* <Stopwatch /> */}
     </>
   )
