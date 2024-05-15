@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 
 function Profile() {
 
     const [user, setUser] = useState(null)
 
+    const navigate = useNavigate()
+
     const { id } = useParams() 
+    
 
     async function getUserData() {
         try {
@@ -15,7 +18,8 @@ function Profile() {
         } catch(err) {
             console.log('whoops...')
             console.log(err)
-            setUser('No user available...')
+            // setUser('No user available...')
+            navigate('/')
         }
     }
 
