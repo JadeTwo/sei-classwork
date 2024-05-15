@@ -7,30 +7,44 @@ function Profile() {
 
     const { id } = useParams() 
 
-    console.log(id)
+    async function getUserData() {
+        try {
+            let response = await fetch('http://example-api.com/' + id)
+            let userData = await response.json()
+            setUser(userData)
+        } catch(err) {
+            console.log('whoops...')
+            console.log(err)
+            setUser('No user available...')
+        }
+    }
 
     useEffect(() => {
-        async function getUserData() {
-            try {
-                let response = await fetch('http://example-api.com/' + id)
-                let userData = await response.json()
-                setUser(userData)
-            } catch(err) {
-                console.log('whoops...')
-                console.log(err)
-                setUser('No user available...')
-            }
-        }
-        getUserData()
+        if (!id) return 
+        setTimeout(getUserData, 1000)
     }, [])
 
-    return (
-        <div>
-            Profile Page
-            <br />
-            {user}
-        </div>
-    )
+    // loaded function for when data is fetched.
+    const loaded = () => {
+        if (typeof user === 'string') {
+            return <div>{user}</div>   
+        } else {
+            return (
+                <div>
+                    <h1>{user.name}</h1>
+                    <h2>{user.age}</h2>
+                </div>
+            );
+        }
+    };
+
+  // Function for when data doesn't exist.
+  const loading = () => {
+    return <h1>Loading...</h1>;
+  };
+
+  // If data exists, run the loaded function; otherwise, run loading.
+  return user ? loaded() : loading();
 }
 
 export default Profile
