@@ -8,6 +8,7 @@ function App() {
   const [show, setShow] = useState(false)
 
   useEffect(() => {
+
     console.log('App Mounted. show: ' + show)
   }, [show])
 

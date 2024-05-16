@@ -4,6 +4,7 @@ import './App.css'
 import Counter from './components/Counter'
 import Stopwatch from './components/StopWatch'
 import CatFriends from './components/CatFriends'
+import ImageCarousel from './components/ImageCarousel'
 
 function App() {
   
@@ -17,11 +18,24 @@ function App() {
     <>
       Hello
       
-      <CatFriends />
+      <ImageCarousel list={catList}/>
+      {/* <CatFriends /> */}
       {/* <Counter /> */}
       {/* <Stopwatch /> */}
     </>
   )
 }
 
+
+const catList = [];
+for (let i = 10; i < 15; i++) {
+  catList.push({
+    id: i,
+    imageUrl: "https://placekitten.com/250/200?image=" + 1
+  });
+}
+
+
+
 export default App
+
