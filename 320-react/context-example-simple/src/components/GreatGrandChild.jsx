@@ -1,10 +1,12 @@
 // Step 3: Use the context value inside the nested component that needs it
-import { FamilyContext } from "../App";
-import { useContext } from "react";
+//         by combining the context itself with the useContext hook
+
+import { FamilyContext } from "../App"; // context itself
+import { useContext } from "react"; // useContext hook
 
 function GreatGrandChild() {
 
-    const style = useContext(FamilyContext)
+    const style = useContext(FamilyContext) // combined
 
     return ( 
         <div>
