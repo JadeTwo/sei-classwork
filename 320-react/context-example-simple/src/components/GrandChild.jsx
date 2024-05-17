@@ -5,7 +5,7 @@ function GrandChild(props) {
     return ( 
         <div>
             <span>GrandChild</span> <br/> |
-            <GreatGrandChild style={props.style} />
+            <GreatGrandChild  />
         </div>
      );
 }
