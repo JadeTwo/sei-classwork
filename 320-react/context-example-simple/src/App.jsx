@@ -2,7 +2,8 @@ import { useState, createContext } from "react";
 import "./App.css";
 import Parent from "./components/Parent";
 
-const FamilyContext = createContext()
+// Step 1: Create the context
+export const FamilyContext = createContext()
 
 function App() {
 
@@ -27,7 +28,10 @@ function App() {
         <span style={style}>GrandParent (App)</span>
         <br />
         <br />
-        <Parent style={style} changeStyle={changeStyle} />
+        {/* // Step 2: Provide the context (and its values) to nested components that need it */}
+        <FamilyContext.Provider value={style}>
+          <Parent style={style} changeStyle={changeStyle} />
+        </FamilyContext.Provider>
       </div>
   );
 }
