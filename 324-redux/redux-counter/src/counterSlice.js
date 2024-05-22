@@ -2,18 +2,20 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const counterSlice = createSlice({
     name: 'counter',
-    initialState: 0,
+    initialState: {
+        number: 0
+    },
     reducers: {
         increment: (state, action) => {
             // "state" in this case is the initialState of our counterSlice
             // and we can use the assignment operator thanks to immer (which RTK uses)
-            state += 1
+            state.number += 1
         },
         decrement: (state, action) => {
-            state -= 1
+            state.number -= 1
         },
         reset: (state, action) => {
-            state = 0
+            state.number = 0
         },
         setToX: (state, action) => {
             state = action.payload
