@@ -3,6 +3,8 @@ import counterReducer from "./counterSlice";
 
 export const store = configureStore({
     reducer: {
+        // counterReducer is a function that will return the initialState 
+        // of the counterSlice as well as any changes we make to it
         count: counterReducer,
         user: null,
         todos: null

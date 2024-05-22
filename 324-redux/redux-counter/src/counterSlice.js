@@ -6,7 +6,7 @@ const counterSlice = createSlice({
     reducers: {
         increment: (state, action) => {
             // "state" in this case is the initialState of our counterSlice
-            // and we can use the assignment operator thanks to Immer (which RTK uses)
+            // and we can use the assignment operator thanks to immer (which RTK uses)
             state += 1
         },
         decrement: (state, action) => {
