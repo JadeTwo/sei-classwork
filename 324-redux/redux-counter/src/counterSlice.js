@@ -3,7 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const counterSlice = createSlice({
     name: 'counter',
     initialState: {
-        number: 0
+        number: 0,
+        likedNumbers: []
     },
     reducers: {
         increment: (state, action) => {
@@ -18,8 +19,12 @@ const counterSlice = createSlice({
             state.number = 0
         },
         setToX: (state, action) => {
-            state = action.payload
+            console.log(action)
+            state.number = Number(action.payload)
         }, 
+        likeThisNumber: (state, action) => {
+            state.likedNumbers.push(Number(action.payload))
+        }
     }
 })
 
@@ -32,7 +37,7 @@ const counterSlice = createSlice({
 */
 
 // exporting our action creators so that we don't need to make them ourselves 
-export const { increment, decrement, reset } = counterSlice.actions
+export const { increment, decrement, reset, setToX, likeThisNumber } = counterSlice.actions
 
 export default counterSlice.reducer
 

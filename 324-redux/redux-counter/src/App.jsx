@@ -1,13 +1,16 @@
 import './App.css'
 
 import { useSelector, useDispatch } from 'react-redux'
-import { decrement, increment, reset } from './counterSlice'
+import { decrement, increment, likeThisNumber, reset, setToX } from './counterSlice'
+import { useRef } from 'react'
 
 function App() {
 
   // select the piece of state we want by returning it from the selector function
-  const number = useSelector((state) => state.count.number) // -> 0
+  const { number, likedNumbers } = useSelector((state) => state.count) // -> 0
   const dispatch = useDispatch()
+  
+  const exRef = useRef() // -> { current: input }
 
   return (
     <>
@@ -15,18 +18,18 @@ function App() {
       <button onClick={() => dispatch(increment())}>Increment</button>
       <button onClick={() => dispatch(decrement())}>Decrement</button>
       <button onClick={() => dispatch(reset())}>Reset</button>
-      <button>Set To X</button>
-      <button>I Like This Number</button>
+      <button onClick={() => dispatch(setToX(exRef.current.value))}>Set To X</button>
+      <button onClick={() => dispatch(likeThisNumber(number))}>I Like This Number</button>
       <p>
         <label>
           Define X
           <br/>
-          <input type="text" />
+          <input type="number" ref={exRef} />
         </label>
       </p>
       <h2>Favorite Numbers</h2>
       <p>
-        {[1, 2, 3].join(', ')}
+        {likedNumbers.join(', ')}
       </p>
     </>
   )
