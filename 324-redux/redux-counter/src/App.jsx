@@ -22,7 +22,7 @@ function App() {
       <button onClick={() => dispatch(likeThisNumber(number))}>I Like This Number</button>
       <p>
         <label>
-          Define X
+          Define X:
           <br/>
           <input type="number" ref={exRef} />
         </label>
